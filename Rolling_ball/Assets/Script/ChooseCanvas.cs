@@ -7,9 +7,7 @@ using Unity.VisualScripting;
 
 namespace Script
 {
-   
-        
-        
+         
     [System.Serializable]
     public class LevelData
     {
