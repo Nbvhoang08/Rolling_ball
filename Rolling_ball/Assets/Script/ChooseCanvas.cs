@@ -36,10 +36,7 @@ namespace Script
         [SerializeField] private GameObject loadingScreen; // Optional: màn hình loading
 
         [Header("Layout Settings")]
-        // [SerializeField] private int buttonsPerRow = 5;
-        // [SerializeField] private float horizontalSpacing = 200f; // Khoảng cách ngang giữa các button
-        // [SerializeField] private float verticalSpacing = 200f;   // Khoảng cách dọc giữa các hàng
-        // [SerializeField] private Vector2 startPosition = new Vector2(-400f, 300f); // Vị trí button đầu tiên
+  
         [SerializeField] private Vector2 buttonSize; // Kích thước của button
         private Coroutine loadLevelCoroutine;
         
@@ -70,7 +67,7 @@ namespace Script
         {
             UIManager.Instance.CloseAll();
             UIManager.Instance.OpenUI<HomeCanvas>();
-            //SoundManager.Instance.PlayPopUpSound();
+        
         }
 
 
@@ -87,17 +84,13 @@ namespace Script
 
             for (int i = 0; i < levels.Count; i++)
             {
-                // int row = i / buttonsPerRow;
-                // int col = i % buttonsPerRow;
-                // float xPos = startPosition.x + (col * horizontalSpacing);
-                // float yPos = startPosition.y - (row * verticalSpacing);
-                // Vector3 buttonPosition = new Vector3(xPos, yPos, 0);
+                
 
                 Button btn = Instantiate(levelButtonPrefab, buttonContainer);
                 levels[i].levelButton = btn;
 
                 RectTransform rectTransform = btn.GetComponent<RectTransform>();
-                // rectTransform.anchoredPosition = buttonPosition;
+            
                 rectTransform.sizeDelta = buttonSize;
 
                 Image buttonImage = btn.GetComponent<Image>();
@@ -120,8 +113,7 @@ namespace Script
                
 
                 PlaySpawnAnimation(btn.gameObject, i * 0.1f);
-                //SoundManager.Instance.PlayPopUpSound();
-                // Cập nhật trạng thái button sau khi đã tạo
+               
                 UpdateBtn(levels[i]);
             }
         }

@@ -14,11 +14,13 @@ namespace Script
                 Vector2 leftBottom = rect.offsetMin;
                 Vector2 rightTop = rect.offsetMax;
 
-                leftBottom.y = 0;
-                rightTop.y = -100;
+                //leftBottom.y = 0;
+                //
+                //rightTop.y = -100;
                 rect.offsetMin = leftBottom;
                 rect.offsetMax = rightTop;
             }
+            //Debug.Log(ratio);
         }
 
         public virtual void Setup()
